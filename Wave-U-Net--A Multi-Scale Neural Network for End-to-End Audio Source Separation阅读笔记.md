@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/511508780
-# Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation阅读笔记
+# [时域语音分离] Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation阅读笔记
 
 # Abstract & Conclusion
 
