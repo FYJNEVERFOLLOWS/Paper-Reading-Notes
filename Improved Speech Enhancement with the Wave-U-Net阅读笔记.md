@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/517420568
 # [多通道语音增强] Improved Speech Enhancement with the Wave-U-Net 阅读笔记
 
 # Abstract & Conclusion

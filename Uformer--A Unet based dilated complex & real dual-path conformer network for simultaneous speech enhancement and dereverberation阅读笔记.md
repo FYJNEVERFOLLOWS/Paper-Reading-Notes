@@ -1,4 +1,5 @@
-# [复数域语音增强] Uformer: A Unet based dilated complex & real dual-path conformer network for simultaneous speech enhancement and dereverberation 阅读笔记
+#! https://zhuanlan.zhihu.com/p/516870278
+# [复数域语音增强] Uformer: A Unet based dilated complex & real dual-path conformer network 阅读笔记
 
 # Abstract
 
@@ -65,12 +66,15 @@ $$
 Complex self attention:
 
 Given the complex input $X$, the complex valued $Q,K,V$ are calculated by:
+
 $$
 Q^\mathcal{R}=X^\mathcal{R}W^\mathcal{R}_Q-X^\mathcal{I}W^\mathcal{I}_Q
 \\
 Q^\mathcal{I}=X^\mathcal{R}W^\mathcal{I}_Q+X^\mathcal{I}W^\mathcal{R}_Q
 $$
+
 The complex self attention is calculated by:
+
 $$
 ComplexAttention(Q,K,V)=\\
 
@@ -99,6 +103,7 @@ In ConvTasNet, original TCN first projects the input to a higher channel space w
 ## 2.4. Hybrid Encoder and Decoder
 
 Both encoder and decoder model the complex spectrum and magnitude at the same time. $C_i$ and $M_i$ denote the complex spectrum and magnitude output of encoder/decoder layer $i$ respectively. To promote the information exchange between complex spectrum and magnitude, the complex-magnitude fusion results $\hat{C}_i$ and $\hat{M}_i$ are calculated by:
+
 $$
 \hat{C}_i^\mathcal{R}=C_i^\mathcal{R}+\sigma(M_i),\\
 \hat{C}_i^\mathcal{I}=C_i^\mathcal{I}+\sigma(M_i),\\
@@ -113,9 +118,11 @@ $$
 We multiply the noisy complex spectrum and magnitude with the estimated CRM $H_C$ and IRM $H_R$ respectively to get enhanced and dereverbed complex spectrum and magnitude.
 
 We use hybrid time and frequency domain loss as the target:
+
 $$
 \mathcal{L}=\alpha\mathcal{L}_{SI-SNR}+\beta\mathcal{L}_{L1}^T+\gamma\mathcal{L}_{L2}^C+\zeta\mathcal{L}_{L2}^M
 $$
+
 SI-SNR loss in time domain, L1 loss in time domain
 
 complex spectrum L2 loss and magnitude L2 loss
