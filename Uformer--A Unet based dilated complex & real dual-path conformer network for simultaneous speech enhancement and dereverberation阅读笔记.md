@@ -115,7 +115,22 @@ $$
 
 ## 2.6. Loss Function
 
-We multiply the noisy complex spectrum and magnitude with the estimated CRM $H_C$ and IRM $H_R$ respectively to get enhanced and dereverbed complex spectrum and magnitude.
+We multiply the noisy complex spectrum and magnitude with the estimated CRM $H_C$ and IRM $H_R$ respectively to get enhanced and dereverbed complex spectrum and magnitude:
+
+$$
+\begin{gathered}
+\mathbf{M}_{C}^{\mathrm{mag}}=tanh(\sqrt{{\mathbf{H}_{C}^{\Re}}^{2}+{\mathbf{H}_{C}^{\Im}}^{2}}) \\ 
+\mathbf{M}_{C}^{\mathrm{pha}}=\arctan 2\left(\mathbf{H}_{C}^{\Im}, \mathbf{H}_{C}^{\Re}\right) \\
+\mathbf{M}_{R}^{\mathrm{mag}}=\sigma\left(\mathbf{H}_{R}\right) \\
+\mathbf{Y}_{C}^{\mathrm{mag}}=\mathbf{X}^{\mathrm{mag}} \odot \mathbf{M}_{C}^{\mathrm{mag}} \\
+\mathbf{Y}_{C}^{\text {pha }}=\mathbf{X}^{\mathrm{pha}}+\mathbf{M}_{C}^{\mathrm{pha}} \\
+\mathbf{Y}_{R}^{\mathrm{mag}}=\mathbf{X}^{\mathrm{mag}} \odot \mathbf{M}_{R}^{\mathrm{mag}} \\
+\overline{\mathbf{Y}_{C}^{\mathrm{mag}}}=\left(\mathbf{Y}_{C}^{\mathrm{mag}}+\mathbf{Y}_{R}^{\mathrm{mag}}\right) / 2 \\
+\mathbf{Y}^{\Re}=\overline{\mathbf{Y}_{C}^{\mathrm{mag}}} \odot \cos \left(\mathbf{Y}_{C}^{\mathrm{pha}}\right) \\
+\mathbf{Y}^{\Im}=\overline{\mathbf{Y}_{C}^{\mathrm{mag}}} \odot \sin \left(\mathbf{Y}_{C}^{\mathrm{pha}}\right) \\
+\mathbf{y}=\mathrm{iSTFT}\left(\mathbf{Y}^{\Re}, \mathbf{Y}^{\Im}\right) .
+\end{gathered}
+$$
 
 We use hybrid time and frequency domain loss as the target:
 

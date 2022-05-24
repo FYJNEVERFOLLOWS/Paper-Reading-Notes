@@ -14,7 +14,7 @@ Raw audio samples form a one-dimensional time series signal, which is fundamenta
 
 # Methods
 
-### Problem Categorization
+## A. Problem Categorization
 
 ![image-20220514163706527](https://tva1.sinaimg.cn/large/e6c9d24ely1h280sfawtpj20js0biab2.jpg)
 
@@ -30,13 +30,13 @@ Label per time step - numeric value: *regression per time step*
 
 *Sequence transduction* (free-length sequence of labels): speech-to-text or language translation.
 
-### Audio Features
+## B. Audio Features
 
 For decades, MFCC have been used as the dominant acoustic feature representation for audio analysis tasks. These are magnitude spectra projected to a reduced set of frequency bands, converted to logarithmic magnitudes, and approximately whitened and compressed with a discrete cosine transform (DCT). With deep learning models, the latter has been shown to be unnecessary or unwanted, since it removes the information and destroys spatial relations. Omitting it yields the *log-mel spectrum*, a popular feature across audio domains.
 
 The window size for computing spectra trades temporal resolution (short windows) against frequential resolution (long windows). 
 
-### Models
+## C. Models
 
 **CNNs:** a 1-d temporal convolution or a 2-d time-frequency convolution is commonly adopted in the case of spectral input features whereas a time-domain 1-d convolution is applied for raw waveform inputs.
 
@@ -60,3 +60,33 @@ Attention-based models learn alignments between the input and output seqs jointl
 
 **GANs:**
 
+GANs consist of two networks, a generator and a discriminator. The generator maps latent vectors drawn from some known prior to samples and the discriminator is tasked with determining if a given sample is real or fake.
+
+**Loss Functions**
+The loss function needs to be differentiable with respect to trainable parameters of the system when gradient descent is used for training.
+
+ The MSE between log-mel spectra can be used to quantify the difference between two frames of audio in terms of their spectral envelopes.
+
+ **Phase modeling**
+The phase can be estimated from the magnitude spectrum using the Griffin-Lim Algorithm. But the accuracy of the estimated phase is insufficient to yield high quality audio, desired in applications such as in source separation, audio enhancement, or generation. Wavenet is trained to generate a time-domain signal from log-mel spectra.
+
+## D. Data
+In image processing, tasks with limited labeled data are solved with *transfer learning*: using large amounts of similar data labeled for another task and adapting the knowledge learned from it to the target domain. Eg, DNNs trained on the ImageNet dataset can be adapted to other classification problems using small amounts of task-specific data by *retraining* the last layers or *finetuning* the weights with a small learning rate.
+
+In ASR, a model can be pretrained on languages with more transcribed data and then adapted to a low-resource language or domains.
+
+*Data generation* and *data augmentation* are other ways of addressing the limited training data problem.
+
+## E. Evaluation
+WER for ASR. WER counts the fraction of word errors after aligning the reference and hypothesis word strings and consists of insertion, deletion and substitution rates which are the number of insertions, deletions and substitutions divided by the number of reference words.
+
+Accuracy for acoustic scene classification.
+
+EER (equal error rate) or F-score for event detection.
+
+# Applications
+## A. Analysis
+### 1) Speech
+For decades, the triphone-state GMM / HMM was the dominant choice for modeling speech. These model have their mathematical elegance.
+
+With the adoption of RNNs for speech modeling, the conditional independence assumption of the output targets incurred by the traditional HMM-based phone state modeling is no longer necessary and the research field shifted towards full seq-to-seq models.
