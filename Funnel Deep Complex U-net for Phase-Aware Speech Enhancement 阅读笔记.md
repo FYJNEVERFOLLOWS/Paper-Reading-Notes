@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/521905931
 # [复数域语音增强] Funnel DCU for Phase-Aware Speech Enhancement 阅读笔记
 
 # Abstract & Conclusion
