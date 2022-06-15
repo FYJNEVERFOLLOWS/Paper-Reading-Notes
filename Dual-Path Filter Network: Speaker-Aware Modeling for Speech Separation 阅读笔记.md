@@ -25,12 +25,19 @@ Contributions:
 Cascade DPFN to a pre-trained separation model to filter a cleaner source waveform.
 ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h39a51gejaj20km0ck75k.jpg)
 ## 3.1. Model Design
-## 3.1.1. Speaker Module for Known Speakers
+### 3.1.1. Speaker Module for Known Speakers
 Use the pre-trained SRE16 x-vector model from Kaldi as the speaker module.
 
 Used the recordings in WSJ0 to obtain the x-vector of each speaker in the dataset.
 
 The x-vector is passed through a FC layer and then used as the speaker condition by the separation module.
 
-## 3.1.2. Speaker Module for Unknown Speakers
-When only the mixed waveform is given, we first separate the mixture through a pre-trained separation model and input the separated waveforms into our speaker module to obtain speaker filters.
+### 3.1.2. Speaker Module for Unknown Speakers
+When only the mixed waveform is given, we first separate the mixture through a pre-trained separation model and input the separated waveforms into our speaker module to obtain speaker filters. 
+![](https://tva1.sinaimg.cn/large/e6c9d24ely1h39ce7oqg2j20kc09xaar.jpg)
+Output is the speaker filter which will be used by the separation module.
+
+### 3.1.3. Filter Based Separation Module
+![](https://tva1.sinaimg.cn/large/e6c9d24ely1h39chz73dnj20lt07i3z6.jpg)
+
+## 3.2. Training Targets
