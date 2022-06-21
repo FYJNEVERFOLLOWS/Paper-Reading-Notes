@@ -12,6 +12,7 @@ Follow $Y^2$-Net 的工作
 
 ## [Dual-Path Filter Network: Speaker-Aware Modeling for Speech Separation](https://www.isca-speech.org/archive/pdfs/interspeech_2021/wang21x_interspeech.pdf), Interspeech 2021
 先预分离，再根据 speaker 信息进一步分离
+[笔记](https://zhuanlan.zhihu.com/p/530248603)
 
 
 # Conventional
@@ -47,3 +48,8 @@ Multiple inputs (features extracted from far-end reference and the echo estimate
 ## [Deep Learning-Based Joint Control of Acoustic Echo Cancellation, Beamforming and Postfiltering](https://arxiv.org/abs/2203.01793)
 如题
 
+
+
+Filterbank design for end-to-end speech separation, Manuel Pariente et al., ICASSP 2020
+
+Deep Attention Fusion Feature for Speech Separation with End-to-End Post-ﬁlter Method

@@ -1,4 +1,5 @@
-# Dual-Path Filter Network: Speaker-Aware Modeling for Speech Separation 阅读笔记
+#! https://zhuanlan.zhihu.com/p/530248603
+# [声纹+语音分离] Dual-Path Filter Network: Speaker-Aware Modeling for Speech Separation 阅读笔记
 
 # Abstract
 Propose Dual-Path filter network, which focuses on the post-processing of speech separation to improve speech separation performance. DPFN is composed of two parts: the speaker module (that infers the identities of the speakers) and the separation module (uses the speakers' info to extract the voices of individual speakers from the mixture). Avoids the problem of PIT.
@@ -41,3 +42,9 @@ Output is the speaker filter which will be used by the separation module.
 ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h39chz73dnj20lt07i3z6.jpg)
 
 ## 3.2. Training Targets
+
+# Experiments
+Very detailed exp analysis that is worth reading
+
+# Conclusion
+DPFN makes use of the speaker info in the initially separated speech and focuses on the post-processing of SS.
