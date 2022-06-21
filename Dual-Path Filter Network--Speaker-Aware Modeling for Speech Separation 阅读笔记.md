@@ -42,9 +42,12 @@ Output is the speaker filter which will be used by the separation module.
 ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h39chz73dnj20lt07i3z6.jpg)
 
 ## 3.2. Training Targets
+<<<<<<< HEAD:Dual-Path Filter Network: Speaker-Aware Modeling for Speech Separation 阅读笔记.md
 
 # Experiments
 Very detailed exp analysis that is worth reading
 
 # Conclusion
 DPFN makes use of the speaker info in the initially separated speech and focuses on the post-processing of SS.
+=======
+>>>>>>> 646e72a3b02f0bca6231363668004e953dfb0612:Dual-Path Filter Network--Speaker-Aware Modeling for Speech Separation 阅读笔记.md
