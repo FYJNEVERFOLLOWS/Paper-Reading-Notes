@@ -70,7 +70,6 @@ Two differences between the SepFormer and SFSRNet: calculating intermediate esti
 ### Separation blocks and multi-loss
 After the encoding and the chunking, the separation process begins. Both Transformer blocks are repeated $P=2$ times. The entire SepFormer block is repeated $K=8$ times with the output of the last Inter-Transformer being the input for the next SepFormer block.
 
-
 After each SepFormer block, intermittent results are calculated. This is done by multiply the channel size by $C$ using a linear layer with a ReLU, overlapping and adding the chunks, multiplying the resulting masks with the encoded representation and feeding it into the decoder. As shown in Fig 3, as the process of calculating estimations only happens once in the original SepFormer, while it happens $K$ times in the SFSRNet.
 
 The sources these intermittent results are compared to, are increasing in resolution, meaning the first output is compared to the original source at a low sampling rate, while the last output is compared to the original source at the full sampling rate.
@@ -81,6 +80,10 @@ The SR step is added after the decoder. All the necessary info is contained with
 The SR process operates in the freq-domain. (STFTs of the estimations for each source and the original mixture)
 
 First, heuristics are used in an attempt to correct the magnitude of the higher frequencies.
+
+Spectrograms are split into low and high frequencies.
+
+For both the low and high frequency matrices, all the freq bins at each timestep are added together. This results in a sequence for the low and high frequencies. By dividing the low frequency sequence mixture by the low frequency sequence of each estimation, it can be estimated, which estimation is contributing to the mixture at each timestep. After dividing the two sequences, the next step is to take the resulting sequences and multiply them with the higher frequency matrix of the mixture. This is how the higher frequency of the corrected magnitudes of each estimation is calculated.
 
 Then, the mag spectrograms of the mixture, the estimations and the corrected estimations are concatenated in the channel dimension and fed into the network.
 
