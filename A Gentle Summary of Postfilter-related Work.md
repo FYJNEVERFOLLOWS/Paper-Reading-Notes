@@ -2,18 +2,24 @@
 
 # NN-based Postfilter (Decoder)
 ## [Inplace Gated Convolutional Recurrent Neural Network for Dual-Channel Speech Enhancement](https://www.isca-speech.org/archive/pdfs/interspeech_2021/liu21f_interspeech.pdf), Interspeech 2021
+Decoder: signal filtering & reconstruction （两个 encoder 分别对 mag 和 phase 进行 masking 和 mapping）
 
 ## [End-to-End Post-Filter for Speech Separation With Deep Attention Fusion Features](https://ieeexplore.ieee.org/abstract/document/9043689), TASLP 2020
+先在时频域预分离，然后将混合语音和预分离的语音同时作为输入，通过 一维卷积和 attention 进行特征融合，融合的特征送入 TCN-based postfilter
 
 ## [$Y^2$-Net FCRN for Acoustic Echo and Noise Suppression](https://arxiv.org/abs/2103.17189), Interspeech 2021
+用两个全卷积循环网络 FCRN，首先是 AEC 模块估计回声，再用后置滤波模块进行残留回声抑制。
 
 ## [Bandwidth-Scalable Fully Mask-Based Deep FCRN Acoustic Echo Cancellation and Postfiltering](https://arxiv.org/abs/2205.04276)
-Follow $Y^2$-Net 的工作
+Follow $Y^2$-Net 的工作，增加了频带宽度扩展 Bandwidth Extension。
 
 ## [Dual-Path Filter Network: Speaker-Aware Modeling for Speech Separation](https://www.isca-speech.org/archive/pdfs/interspeech_2021/wang21x_interspeech.pdf), Interspeech 2021
 先预分离，再根据 speaker 信息进一步分离
 [笔记](https://zhuanlan.zhihu.com/p/530248603)
 
+## [SFSRNet: Super-Resolution for Single-Channel Audio Source Separation](https://www.aaai.org/AAAI22Papers/AAAI-1535.RixenJ.pdf), AAAI 2022
+decoder 后面接上超分网络 + 渐进学习恢复降采样带来的信息损失
+[笔记](https://zhuanlan.zhihu.com/p/532595774)
 
 # Conventional
 ## [Nonlinear Spatial Filtering in Multichannel Speech Enhancement](https://arxiv.org/abs/2104.11033), TASLP 2021
@@ -52,4 +58,3 @@ Multiple inputs (features extracted from far-end reference and the echo estimate
 
 Filterbank design for end-to-end speech separation, Manuel Pariente et al., ICASSP 2020
 
-Deep Attention Fusion Feature for Speech Separation with End-to-End Post-ﬁlter Method
