@@ -1,4 +1,6 @@
-# Dual-path RNN: efficient long sequence modeling for time-domain single-channel speech separation 阅读笔记.md
+#! https://zhuanlan.zhihu.com/p/534750766
+# [时域语音分离] DPRNN: long sequence modeling for time-domain single-channel speech separation 阅读笔记
+
 # Abstract
 The time-domain separation systems often receive input sequences consisting of a huge number of time steps, which introduces challenges for modeling extremely long sequences.
 
