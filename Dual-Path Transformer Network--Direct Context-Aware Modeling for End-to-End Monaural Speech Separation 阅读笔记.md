@@ -1,4 +1,5 @@
-# Dual-Path Transformer Network: Direct Context-Aware Modeling for End-to-End Monaural Speech Separation 阅读笔记
+#! https://zhuanlan.zhihu.com/p/535471374
+# DPTNet: Direct Context-Aware Modeling for End-to-End Monaural Speech Separation 阅读笔记
 
 Propose a dual-path transformer network (DPT-Net) for end-to-end speech separation, which introduces direct context-awareness in the modeling for speech sequences. By introduces a improved transformer, elements in speech sequences can interact directly, which enables DPTNet model for speech sequences with direct context-awareness. The improved transformer in our approach learns the order information of the speech sequences without positional encodings by incorporating a RNN into the original transformer.
 
@@ -40,4 +41,25 @@ The final output of the scaled dot-product attention module is computed as a wei
 
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220627111111.png)
 Multi-head attention is composed of multiple scaled dot-product attention modules. Firstly, it linearly maps the inputs $h$ times with different, learnable linear projections to get parallel queries, keys and values respectively. Then the scaled dot-product attention is performed on these mapped queries, keys and values simultaneously. 
+
+
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220627111154.png)
+
+To learn the order information, we replace the first FC layer with a RNN in the Feed Forward network.
+
+Each DPT consists of intra-transformer and inter-transformer, which are committed to modeling local and global info respectively.
+
+This structure makes each element in speech seqs interact directly with only some elements and interact with the rest elements through an intermediate element, which allows our approach to model for extremely long speech sequences efficiently despite a slight negative impact on the direct context-aware modeling.
+
+# Experiment
+## 3.1. Dataset
+WSJ0-2mix, LS-2mix
+
+[A Pytorch implementation](https://github.com/ujscjj/DPTNet)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220629165748.png)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220629165814.png)
+
+# Conclusion
+DPTNet models the speech sequences directly conditioning on context and can learn the order info in speech seqs without positional encodings and model effectively for extremely long sequences of speech signals.
