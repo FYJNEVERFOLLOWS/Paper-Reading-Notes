@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/500993159
-# Multi-task Neural Network for Robust Multiple Speaker Embedding Extraction阅读笔记
+# Multi-task Neural Network for Robust Multiple Speaker Embedding Extraction 阅读笔记
 
 # Abstract & Conclusion
 
