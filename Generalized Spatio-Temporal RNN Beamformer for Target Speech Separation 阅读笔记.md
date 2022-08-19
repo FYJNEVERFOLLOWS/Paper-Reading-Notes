@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/554804094
 # Generalized Spatio-Temporal RNN Beamformer for Target Speech Separation 阅读笔记
 
 # Abstract

@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/535471374
-# DPTNet: Direct Context-Aware Modeling for End-to-End Monaural Speech Separation 阅读笔记
+# [时域语音分离] DPTNet: Direct Context-Aware Modeling for End-to-End Monaural Speech Separation 阅读笔记
 
 Propose a dual-path transformer network (DPT-Net) for end-to-end speech separation, which introduces direct context-awareness in the modeling for speech sequences. By introduces a improved transformer, elements in speech sequences can interact directly, which enables DPTNet model for speech sequences with direct context-awareness. The improved transformer in our approach learns the order information of the speech sequences without positional encodings by incorporating a RNN into the original transformer.
 

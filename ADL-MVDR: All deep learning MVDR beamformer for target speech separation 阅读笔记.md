@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/554644596
 # ADL-MVDR: All deep learning MVDR beamformer for target speech separation 阅读笔记
 
 # Abstract

@@ -1,4 +1,4 @@
-# Inter-channel Conv-TasNet for multichannel speech enhancement 阅读笔记.md
+# [时域多通道] Inter-channel Conv-TasNet for multichannel speech enhancement 阅读笔记
 
 # Abstract
 Studies on the efficient multichannel network structure fully exploiting spatial information and inter-channel relationships is still in its early stages.
