@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/561282711
 # MIMO Self-attentive RNN Beamformer for Multi-speaker Speech Separation 阅读笔记
 
 # Abstract
