@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/567318345
 # Unified Gradient Reweighting for Model Biasing with Applications to Source Separation 阅读笔记
 
 # Abstract
@@ -62,3 +63,28 @@ In real-world systems, the expected performance is not the only metric that shou
 ### 2.3.3. Bias Towards Specific Classes
 
 # 3. Experimental Framework
+To experimentally verify our approach we perform a diverse set of source separation experiments with multiple sound classes.
+
+## 3.1. Audio Data and Mixture Generation Process
+Using augmented mixture generation process with WSJ0 and ESC50.
+
+## 3.2. Separation Network Architecture
+*Sudo rm -rf* architecture has been shown to perform comparably with other state-of-the-art architectures with a much lower computational complexity in terms of memory, number of parameters and number of floating point operations for both speech and environmental sound source separation tasks.
+
+It is important to underline that our unified gradient reweighting approach is not dependent on the estimation model that we use and can be applied effortlessly to any other architecture.
+
+## 3.3. Training and Evaluation Details
+From Section 2.3, it is evident that our approach heavily relies on having a batch size which can appropriately fit many examples which are drawn i.i.d. from the dataset. For that reason, we maximize the number of examples in the batch by setting the max possible batch size. ($B=28$ on a single 2080 Ti)
+
+# 4. Results & Discussion
+## 4.1. Robust Sound Separation
+In this mode, we take into consideration the failure case of separation systems. 
+
+In Fig. 1, the distribution of the SI-SDRi of all estimations is depicted. It is evident that by changing the parameter $\alpha$, we make the system more robust towards bad examples by sacrificing the performance on easier examples.
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20220921085501.png)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20220923092412.png)
+
+# 5. Conclusion
+Presented a unified gradient reweighting scheme that enables users to shift the operation point of separation models. Our approach remains general enough in order to be applied towards many detection, estimation or generation problems with minimal modifications.

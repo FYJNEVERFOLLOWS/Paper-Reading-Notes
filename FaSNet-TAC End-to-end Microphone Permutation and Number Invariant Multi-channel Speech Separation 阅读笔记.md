@@ -1,6 +1,7 @@
-# [FaSNet-TAC] End-to-end Microphone Permutation and Number Invariant Multi-channel Speech Separation 阅读笔记
+#! https://zhuanlan.zhihu.com/p/566561321
+# [FaSNet-TAC] E2E Microphone Permutation and Number Invariant Multi-channel Speech Separation 阅读笔记
 
-# Refer to the reimplementation at https://github.com/yoonsanghyu/FaSNet-TAC-PyTorch
+# End-to-end Microphone Permutation and Number Invariant Multi-channel Speech Separation, ICASSP 2020 [[paper](https://ieeexplore.ieee.org/abstract/document/9054177)][[code](https://github.com/yoonsanghyu/FaSNet-TAC-PyTorch)]
 
 # Abstract
 It is vital to guarantee the robustness of a system with respect to the locations and numbers of microphones in ad-hoc mic speech separation.
