@@ -26,3 +26,6 @@ Insert an adaptation layer between the first and second convolution blocks to dr
 The target speaker embedding vector, $\mathbf{e}^s$, is computed by the time-domain auxiliary network. The auxiliary network consists of an encoder layer and a single convolution block similar to those used in the extraction network.
 
 ## 2.2. Spatial features
+
+
+# Conclusion
