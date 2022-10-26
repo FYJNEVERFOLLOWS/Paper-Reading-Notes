@@ -3,8 +3,8 @@
 # Abstract
 Contributions:
 1) an integrated waveform-in-waveform-out separation system in a single neural network architecture.
-2) reformulate the traditional STFT and IPD (inter-channel phase difference) as a function of time-domain convolution with a special kernel.
-3) relaxed those fixed kernels to be learnable, so that the entire architecture becomes purely data-driven and can be trained from end-to-end.
+2) **reformulate the traditional STFT and IPD (inter-channel phase difference) as a function of time-domain convolution with a special kernel**.
+3) **relaxed those fixed kernels to be learnable**, so that the entire architecture becomes purely data-driven and can be trained from end-to-end.
 
 We demonstrate on the WSJ0 far-field speech separation task that, with the benefit of learnable spatial features, our proposed end-to-end multi-channel model significantly improved the performance.
 
