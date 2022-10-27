@@ -1,4 +1,7 @@
+#! https://zhuanlan.zhihu.com/p/577690946
 # End-to-End Multi-Channel Speech Separation 阅读笔记
+
+https://arxiv.org/abs/1905.06286
 
 # Abstract
 Contributions:
