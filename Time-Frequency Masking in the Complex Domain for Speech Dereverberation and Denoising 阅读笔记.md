@@ -1,4 +1,4 @@
-#! https://zhuanlan.zhihu.com/p/517422383
+#! https://zhuanlan.zhihu.com/p/516722805
 # [复数域语音增强] Time-Frequency Masking in the Complex Domain for Speech Dereverberation and Denoising 阅读笔记
 
 # Abstract
