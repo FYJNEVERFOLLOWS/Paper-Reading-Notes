@@ -33,7 +33,7 @@ When an additional clue is provided, during the separation, the network usually 
 ## 3.1. Speech extraction network
 Utilize the location information as the bias signal, and propose a system to extract the target speaker out of the speech mixture.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202205/20220608151945.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220608151945.png)
 
 The proposed model adopts a similar framework as mask learning systems, where a mask is estimated for the target speaker through a neural network.
 
@@ -61,7 +61,7 @@ $n$: the speaker index
 ## 3.2. Multi-pass Mask Update
 Fixed beamforming has less interference-cancelling power than adaptive beamforming such as MVDR beamformer when the signal statistics are abundant.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202205/20220608171554.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220608171554.png)
 
 ## 3.3. Model analysis
 2 limitations: 

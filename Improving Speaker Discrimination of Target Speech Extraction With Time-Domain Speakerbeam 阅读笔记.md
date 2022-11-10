@@ -20,12 +20,34 @@ Finally, to enforce learning more discriminative speaker embedding vectors, we p
 
 # 2. Proposed TD-SpeakerBeam
 SpeakerBeam is composed of two networks, an *extraction network*, and an *auxiliary network*. 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221012162654.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221012162654.png)
 Insert an adaptation layer between the first and second convolution blocks to drive the network towards extracting the target speech. The adaptation layer accepts a speaker embedding vector of the target speaker, $\mathbf{e}^s$, as auxiliary info. 
+
+$\mathbf{a}^s$: adapatation / aux utt
 
 The target speaker embedding vector, $\mathbf{e}^s$, is computed by the time-domain auxiliary network. The auxiliary network consists of an encoder layer and a single convolution block similar to those used in the extraction network.
 
 ## 2.2. Spatial features
+IPD features provide spatial info related to the direction of sources in the mixture. Speaker embedding may represent spectral info about the target spk. **Consequently, it is not obvious how to efficiently combine IPDs with target spk embeddings as they represent different info**. We consider two schemes, *input combination* and *internal combination*.
+
+*Input combination*: IPD features concatenated to the ouput of encoder layer of the extraction network (Early Fusion). This combine spatial info from IPD features with spectral info from the mixture signal $\mathbf{y}$ into a spectral representation, may reduce the potential of the network to fully exploit spatial info by the upper layers of the network.
+
+Fig. 1(b) shows *internal combination*, which combines the IPD features after the adaptation layer. Therefore, the spk selection operate based only on the spectral info, and the spatial info can be exploited by the upper layers without being obstructed by the adaptation layer.
+
+## 2.3. multi-task learning with additional SI-loss
+Si-SDR and cross-entropy-based SI-loss
+
+The SI-loss is used to obtain more discriminative speaker embedding vectors.
+
+Weight on SI-loss is 10.
+
+# 3. Related prior work
+Deep attractor network [] performs speech separation followed by target speaker selection from the separated signals. We compare TD-SpeakerBeam with TasNet separation followed by x-vector-based speaker selection, which can be considered as a strong baseline for target speech extraction.
+
+[Direction-aware speaker beam for multi-channel speaker extraction], where a set of fixed beamformers combined with an attention module on the output of the beamformers was used to perform a rough initial target speech extraction followed by a refinement step with FD-SpeakerBeam.
+
+# 4. Exp
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221110103955.png)
 
 
 # Conclusion

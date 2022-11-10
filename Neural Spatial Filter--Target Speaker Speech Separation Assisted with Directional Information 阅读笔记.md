@@ -40,7 +40,7 @@ $$
 \operatorname{DSNR}_{\theta_p}(t, f)=\frac{\left\|\mathbf{w}_p^H(f) \mathbf{Y}(t, f)\right\|_2^2}{\max _{k \in \Omega_p}\left(\left\|\mathbf{w}_k^H(f) \mathbf{Y}(t, f)\right\|_2^2\right)}
 $$
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221011153157.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221011153157.png)
 The proposed DPR and DSNR can clearly provide cues for separating target speech from the interference.
 
 ## 2.3. Attention mechanism
@@ -51,7 +51,7 @@ $$
 att(ad)=2*max(\sigma(ad)=0.5,0)
 $$
 where $\sigma(ad)=1/(1+exp(-w(ad-b)))$ is the sigmoid score denotes how much emphasis should be put on spatial and directional features, $w$ and $b$ are trainable parameters.
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221011212150.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221011212150.png)
 Figure 2 illustrates our proposed neural spatial filter and feature formulation with attention mechanism. On the right is the attention curve under different ADs. Spectral, spatial and directional features are concatenated along freq axis.
 
 # 3. Training Paradigms
@@ -73,7 +73,7 @@ IPDs are extracted between mic pairs (1, 4), (2, 5), (3, 6), (1, 2), (3, 4), (5,
 ## 4.3. Results and analysis
 The reverberant speech of each source is used as reference to compute the metric. The performances are evaluated under different range of ADs between speakers.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221011215043.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221011215043.png)
 
 worth further reading for writing.
 

@@ -66,7 +66,7 @@ where $i$ is the index after sorting. It is worth noting that the weighted loss 
 Also apply wSI-SNR during validation (calculate weights over all validation samples instead of one batch). The weighted validation loss helps to select models that are more biased towards hard samples.
 
 # 5. Results
-![Dont understand this fig, plz leave a comment if you know](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221004092358.png)
+![Dont understand this fig, plz leave a comment if you know](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221004092358.png)
 
 ## 5.2. Results of speech separation
 DM: dynamic mixing
@@ -74,9 +74,9 @@ DM: dynamic mixing
 WTL: weighted loss for training set
 
 WVL: weighted loss for validation set
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221004092647.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221004092647.png)
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221004092743.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221004092743.png)
 
 # 6. Conclusions
 Explore an improved separation model for hard samples instead of training a model using average metrics. We assume that sampling uniformly in the training set leads to data imbalance. Local hard sample mining: weighted loss and global hard sample mining: dynamic mixing with hard sample mining.

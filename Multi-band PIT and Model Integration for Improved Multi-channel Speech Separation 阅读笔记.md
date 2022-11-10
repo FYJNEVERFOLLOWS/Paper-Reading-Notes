@@ -29,7 +29,7 @@ In practice, wide spacing of microphones is required to enhance DOA resolution. 
 
 As shown in Fig. 1, multiple RNN towers are jointly trained to generate individual subband embeddings from the corresponding subband input features. Therefore, those subbands with reliable spatial features could leverage them to boost the embedding learning, while high freq subbands learn to attend more on their spectral features. The dimension of each subband embedding remains the same as the conventional full-band embedding's.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221019215007.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221019215007.png)
 
 # 5. Model integration
 Conventional multi-channel training does not generalize well to the spatial overlapping cases in which spatial cues are ineffective while spectral cues are not selectively attended. Propose a simple yet effective algorithm to address the spatial overlapping issue existing in the multi-channel feature encoding and model training. In a multi-task learning framework, the prediction of speakers' relative location is jointly trained on the shared embedding with the multi-channel speech separation model to infer if the included angle of two speakers on the horizontal plane is less than 15$^{\circ}$, i.e., spatial overlapping.

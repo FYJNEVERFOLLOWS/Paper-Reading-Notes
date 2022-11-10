@@ -36,7 +36,7 @@ Aim at estimating $S_q(c)$ for each source at the reference mic based on the mul
 
 ## 2.1. MISO-BF-MISO for Block-Online Separation
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202205/20220606154935.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202206/20220606154935.png)
 
 $MISO_1$: [Multi-Microphone Complex Spectral Mapping for Speech Dereverberation]
 

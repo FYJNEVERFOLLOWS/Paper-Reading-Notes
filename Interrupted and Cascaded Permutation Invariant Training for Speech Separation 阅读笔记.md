@@ -55,7 +55,7 @@ $\langle\cdot,\cdot\rangle$ represents the dot product
 
 $||s||^2$ denotes the signal power
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221004224550.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221004224550.png)
 
 ## 4.2. Label Assignment Switches for PIT
 "Label Assignment Switches" refers to the situation that the label assignment of the same mixture was different within two consecutive epochs. We use this to analyze the problems of PIT.
@@ -66,7 +66,7 @@ This verified those mentioned earlier that inconsistent label assignments caused
 
 ## 4.3. Fixed Label Training
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221005091438.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221005091438.png)
 
 Fig. 3 (a), (b) < (c), shows fixed labels alone are inadequate, and PIT is clearly better even with unstable training due to serious label switches.
 
@@ -75,15 +75,15 @@ Tested different ways of obtaining the fixed labels, by PIT after $L$ epochs ($L
 ## 4.4. PIT cascaded with Fixed Label Training
 The cascaded three sections of PIT - fixed label training - PIT is actually curves Fig. 3(c)(e)(f)
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221005094633.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221005094633.png)
 
 
 ## 4.5. Summary of the Results
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221005095337.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221005095337.png)
 The last column is the percentages of labels out of all the $T$ training mixtures for which the fixed labels or finally obtained labels are different from the best results (epoch 300 at the end of curve (f)).
 
 (c) -> (f): original PIT -> Cascaded PIT -fx - PIT
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221005095312.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221005095312.png)
 
 
 # 5. Conclusion

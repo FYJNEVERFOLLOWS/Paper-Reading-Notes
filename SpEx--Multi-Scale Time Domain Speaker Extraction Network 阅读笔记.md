@@ -7,7 +7,7 @@ Contributions:
 3) Propose a multi-task learning algorithm to jointly optimize the four network components of SpEx with an unified training process.
 4) Propose a multi-scale encoding and decoding scheme that captures multiple temporal resolutions for improved voice quality.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221005165619.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221005165619.png)
 
 # 2. Time-domain Speaker Extraction Network
 Similar to TasNet, we opt for a trainable neural network to serve as the speech encoder in time-domain speaker extraction. The speaker encoder is trained to convert time-domain speech signal into spectrum-like embedding, also called embedding coefficients.
@@ -22,7 +22,7 @@ This paper proposes to encode the mixture speech into multi-scale speech embeddi
 
 To concatenate the embeddings across different time-scale, we align them by keeping the same stride, $L_1/2$, across different scales. The encoder learns representations in multiple scales with the varying filter lengths, e.g., the short window has good resolution at high freq and long window has high resolution at low freq. Without trading the temporal resolution with freq resolution like in STFT, we encode the time-domain signal into three temporal resolutions in the embedding $E$.
 
-![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202209/20221007161452.png)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202210/20221007161452.png)
 
 ## B. Multi-scale Encoding and Decoding
 Speech has a rich temporal structure over multiple time scales presenting phonemic, prosodic and linguistic content. [Testing multi-scale processing in the auditory system] showed that speech analysis of multiple temporal resolutions leads to improved speech recognition performance.
