@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/583476450
 # Improving Speaker Discrimination of Target Speech Extraction With Time-Domain Speakerbeam 阅读笔记
 
 # Abstract
@@ -47,7 +48,21 @@ Deep attractor network [] performs speech separation followed by target speaker 
 [Direction-aware speaker beam for multi-channel speaker extraction], where a set of fixed beamformers combined with an attention module on the output of the beamformers was used to perform a rough initial target speech extraction followed by a refinement step with FD-SpeakerBeam.
 
 # 4. Exp
+## 4.3. Results with IPD features using MC-WSJ0-2mix
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221110103955.png)
+FM: female-male
 
+Performance dropped greatly when using x-vector-based speaker selection (row (4) and (5)). X-vector extractor is affected by reverberation, which may partly contribute to the poor performance.
+
+The proposed TD-SpeakerBeam (row (7)) outperformed all systems but TasNet with oracle speaker selection. 
+
+## 4.4. Results with the SI-loss on CSJ-2mix
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221110164123.png)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/1668070485119.jpg)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221110165757.png)
+We observe that increasing the number of spks has little effect on TasNet performance, but greatly improves the performance of SpeakerBeam (Fig. 3). This suggests that, for SpeakerBeam, separating signals is somewhat easier than identifying spks. 
 
 # Conclusion
+Proposed different strategies for improving the target speech discrimination capability of SpeakerBeam. We showed that a time-domain implementation greatly improved performance. Moreover, the performance gap between same-gender and different-gender mixtures could be reduced further by exploiting spatial info, using an additional SI-loss.

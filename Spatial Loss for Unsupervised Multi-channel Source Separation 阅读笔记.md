@@ -5,3 +5,5 @@ Propose a spatial loss for unsupervised multi-channel source separation. The pro
 
 # 1. Intro
 Propose a spatial loss func for unsupervised multi-channel source separation that enforces consistency of the estimated spatial parameters.
+
+TODO
