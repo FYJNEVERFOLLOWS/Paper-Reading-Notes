@@ -91,6 +91,9 @@ L=\sum_{j=1}^2 z_j \sum_{f, t} & {\left[\left(\left|X_{j, f, t}\right|^{0.3}-\le
 $$
 where $z_1=0.8$ is the speech loss weight and $z_2=0.2$ is the noise loss weight.
 
+Why 0.3-power-compressed?
+: Power-law compression with power 0.3 approximates a log function while avoiding $-\infty$ at 0, partially equalizing the importance of quieter sounds relative to loud ones [Exploring Tradeoffs in Models for Low-latency Speech Enhancement] [R. F. Lyon, Human and machine hearing. Cambridge University Press, 2017, Chapter 2].
+
 Our proposed consistency constraints are compatible with both real and complex-valued masks. For real-valued masking, the network predicts a single scalar value through a sigmoid nonlinearity for each TF bin, and the noisy phase is used for reconstruction. To perform complex-valued masking, the network predicts the real and imag parts of a complex-valued mask through a hyperbolic tangent (tanh) nonlinearity. This mask is multiplied with the complex noisy STFT, then reconstructed.
 
 We consider 2 types of weighting schemes to implement weighted mixture consistency:
