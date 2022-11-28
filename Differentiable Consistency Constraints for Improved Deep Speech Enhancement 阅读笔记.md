@@ -1,6 +1,6 @@
 #! https://zhuanlan.zhihu.com/p/581049927
 # Differentiable Consistency Constraints for Improved Deep Speech Enhancement 阅读笔记
-[ICASSP 2019]
+## [ICASSP 2019]
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221117113929.png)
 # Abstract
 Current masking approaches often neglect two important constraints: STFT consistency and mixture consistency. Without STFT consistency, the system's output is not necessarily the STFT of a time-domain signal, and without mixture consistency, the sum of the estimated sources does not necessarily equal to the input mixture.
