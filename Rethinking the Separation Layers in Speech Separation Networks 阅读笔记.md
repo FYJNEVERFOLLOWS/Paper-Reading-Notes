@@ -46,3 +46,11 @@ Serialized Output Training (SOT) applies the SISO-only config w/o iterative sepa
 A deeper design in the SISO module is able to improve the performance. Assigning 70% of the total blocks to the SISO module can be a good config.
 
 Performance obtained by the mixed SIMO-SISO design mainly comes from the low-overlap utts.
+
+As more and more recent models consider data distributions with partially-overlap utterances [Librimix, Continuous speech separation: Dataset and analysis], such mixed SIMO-SISO design should be more practical and beneficial than the standard designs.
+
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h8rxbzzgs9j30vw0dm76k.jpg)
+
+
+# 5. Conclusion
+Experiment results on various configurations showed that although almost all existing separation systems are SIMO-only, the mixed SIMO-SISO design can improve the separation performance especially on low-overlap utterances. The SISO-only design also achieved slightly better performance than the standard SIMO-only design, challenging the role of the SIMO separation layers in a speech separation system.
