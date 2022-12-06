@@ -4,6 +4,7 @@
 # Abstract
 
 SIMO: single-input-multi-output
+
 SISO: single-input-single-output
 
 Certain two-stage separation systems integrated with a post-enhancement SISO module can improve the separation quality. Why performance improvements can be achieved by incorporating the SISO modules? Are SIMO modules always necessary? We empirically examine those questions by designing models with varying configurations in the SIMO and SISO modules. We show that comparing with the standard SIMO-only design, a mixed SIMO-SISO design with a same model size is able to improve the separation performance especially under low-overlap conditions.
