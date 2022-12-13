@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/590146371
 # Rethinking the Separation Layers in Speech Separation Networks 阅读笔记
 ## ICASSP 2021
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202212/20221202145327.png)
