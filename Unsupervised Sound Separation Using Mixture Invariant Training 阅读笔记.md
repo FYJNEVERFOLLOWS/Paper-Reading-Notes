@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/592274391
 # Unsupervised Sound Separation Using Mixture Invariant Training 阅读笔记
 ## [NIPS 2020]
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202212/20221201214021.png)
