@@ -23,3 +23,8 @@ Fig. 1 (B) shows the simple modification to the conventional pipeline where mult
 
 ## 2.2. Connection to the Overseparation-grouping Pipeline
 
+
+![](https://tva1.sinaimg.cn/large/008vxvgGly1h9jly9h0kgj30io0bigmn.jpg)
+
+MAC: https://github.com/Lyken17/pytorch-OpCounter
+
