@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/595090650
 # On the Use of Deep Mask Estimation Module for Neural Source Separation Systems 阅读笔记
 ## [Interspeech 2022]
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202211/20221128220322.png)
