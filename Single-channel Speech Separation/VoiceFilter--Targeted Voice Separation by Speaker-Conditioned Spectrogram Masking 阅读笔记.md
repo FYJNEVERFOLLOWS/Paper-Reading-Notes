@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/610446501
 # VoiceFilter: Targeted Voice Separation by Speaker-Conditioned Spectrogram Masking 阅读笔记
 
 # Abstract

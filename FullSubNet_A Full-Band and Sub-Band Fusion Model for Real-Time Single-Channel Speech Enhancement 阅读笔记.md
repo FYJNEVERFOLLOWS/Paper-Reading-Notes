@@ -1,3 +1,6 @@
+#! https://zhuanlan.zhihu.com/p/610174244
+# FullSubNet: A Full-Band and Sub-Band Fusion Model for Real-Time Speech Enhancement 阅读笔记
+
 # FullSubNet: A Full-Band and Sub-Band Fusion Model for Real-Time Single-Channel Speech Enhancement 阅读笔记
 
 # Abstract
