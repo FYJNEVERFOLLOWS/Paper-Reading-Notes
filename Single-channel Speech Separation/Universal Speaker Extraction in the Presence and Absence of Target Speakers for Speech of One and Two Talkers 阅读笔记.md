@@ -1,3 +1,5 @@
+#! https://zhuanlan.zhihu.com/p/611737295
+# Universal Speaker Extraction 阅读笔记
 # Universal Speaker Extraction in the Presence and Absence of Target Speakers for Speech of One and Two Talkers 阅读笔记
 
 # Abstract
