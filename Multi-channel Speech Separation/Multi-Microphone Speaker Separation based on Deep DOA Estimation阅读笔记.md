@@ -81,7 +81,7 @@ mask的含义：对于给定的 matrix $\mathcal{R}$, 在 $(l,k)$ bin上预测�
 
 Estimating the DOA is modeled as a classification problem instead of a regression task. We are not interested in finding the exact DOAs of the speakers in the scenario but rather, grouping them into distinct directions. That is, even with inaccurate DOA estimate, the speech separation can still work, provided that most TF bins are clustered to a mutually exclusive classes. 
 
-![image-20220208173758240](https://tva1.sinaimg.cn/large/008i3skNly1gz68oirhfij32gd0u0grc.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230401215716.png)
 
 **B. The U-net for DOA estimation**
 
@@ -117,8 +117,8 @@ Training set: 2 hrs of recordings with 6000 different scenarios of mixtures of t
 
 For each test scenario, we selected two speakers (male or female) from the test set of the TIMIT database, placed them in two different angles between 0° and 180° relative to the mic array, at the distance of either 1m or 2m.
 
-![image-20220208210526008](https://tva1.sinaimg.cn/large/008i3skNly1gz6eoddz6mj31900qyq8u.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230401215739.png)
 
-![image-20220208210359547](https://tva1.sinaimg.cn/large/008i3skNly1gz6emwgby6j32bc0ogn8c.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230401215754.png)
 
-![image-20220208210442864](https://tva1.sinaimg.cn/large/008i3skNly1gz6enmdmgej31j60u0trh.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230401215815.png)

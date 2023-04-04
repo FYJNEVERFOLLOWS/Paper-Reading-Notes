@@ -14,7 +14,7 @@ Then, a 3D region feature is designed condition on the vertices and center of th
 # 3D Feature
 ## 2.1. 3D spatial feature
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230315154343.png)
-[3d spatial features for multi-channel target speech separation]
+[3D Spatial Features for Multi-Channel Target Speech Separation, ASRU 2021]
 
 location $\mathbf{l}=\{\theta,\phi,d\}$
 
