@@ -19,8 +19,8 @@ Observe that often there is a certain natural separation between regions contain
 
 Observe that in multi-stage processing frameworks, later stages often do not have access to all info from the input. For example, enhancement post-filter that follows a beamformer does not have access to spatial info that's lost after spatial filtering. Intuitively, a joint separation in spatial, spectral and temporal domain has potential to be more efficient.
 
-We train Spatial Demucs on dynamic scenes with moving sources of the same type; and since the only discriminative feature between target and interfering sources is their presence in one of the two regions, the network has to understand the spatial configuration in order to perform the separation task. **By discriminating between the target and interference sound sources, the network is implicitly performing source localization.
-**
+We train Spatial Demucs on dynamic scenes with moving sources of the same type; and since the only discriminative feature between target and interfering sources is their presence in one of the two regions, the network has to understand the spatial configuration in order to perform the separation task. **By discriminating between the target and interference sound sources, the network is implicitly performing source localization.**
+
 Compared against a mask-based MVDR oracle beamformer followed by a single-channel Demucs post-filter. 
 
 # 2. Related work
@@ -35,7 +35,7 @@ Based on the causal Demucs, a multi-layer convolutional encoder-decoder with U-N
 Unlike most other approaches that use multi-channel data to produce a single-channel output, we ask the network to output target signals at each channel. By doing so, we preserve the spatial info of the target sources for subsequent downstream tasks.
 
 ## 3.2. Training
-We train the network to perform a task that requires spatial understanding of the acoustic scene. Train the model by minimizing the L1 loss on the raw waveforms for all mic channels.
+We train the network to perform a task that requires spatial understanding of the acoustic scene. In particular, during training the network is presented with two sound sources of the same type and asked to extract one of them and suppress the other. The sources are freely moving in the environment and the only discriminative feature between the two is their presence in the respective spatial regions. By discriminating between target and interference, the network is implicitly performing the source localization. Finally, we train the model by minimizing the L1 loss on the raw waveforms for all microphone channels. Finally, train the model by minimizing the L1 loss on the raw waveforms for all mic channels.
 
 ## 3.3. Dataset
 Segments of 3 seconds.

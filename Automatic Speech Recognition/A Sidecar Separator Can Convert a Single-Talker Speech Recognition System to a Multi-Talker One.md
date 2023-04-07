@@ -1,0 +1,74 @@
+#! https://zhuanlan.zhihu.com/p/620038918
+# A Sidecar Separator Can Convert a Single-Talker Speech Recognition System to a Multi-Talker One 阅读笔记
+
+## ICASSP 2023 Helen Meng
+
+# Abstract
+Although automatic speech recognition (ASR) can perform well in common non-overlapping environments, sustaining performance in multi-talker overlapping speech recognition remains challenging. Recent research revealed that ASR model's encoder captures different levels of information with different layers – the lower layers tend to have more acoustic information, and the upper layers more linguistic. This inspires us to develop a Sidecar separator to empower a well-trained ASR model for multi-talker scenarios by separating the mixed speech embedding between two suitable layers. We experimented with a wav2vec 2.0-based ASR model with a Sidecar mounted. By freezing the parameters of the original model and training only the Sidecar (8.7 M, 8.4% of all parameters), the proposed approach outperforms the previous state-of-the-art by a large margin for the 2-speaker mixed LibriMix dataset, reaching a word error rate (WER) of 10.36%; and obtains comparable results (7.56%) for LibriSpeechMix dataset when limited training.
+## Index Terms
+multi-talker speech recognition, domain adaptation
+
+# 1. Intro
+Two mainstream E2E paradigms that aim to tackle multi-talker ASR: (i) cascade architectures that jointly fine-tune speech separation and recognition modules; (ii) complete E2E models customized deliberately for multi-talker overlapping speech scenarios. The latter does not take full advantage of the readily available advancements made for single-talker ASR. This motivates us to find a low-cost and loose-coupling approach to adapt well-trained single-talker ASR models for multi-talker scenes w/o distorting the original model's parameters.
+
+Recent research investigated the info captured in the layers within the encoders of ASR models. [Understanding the role of self attention for efficient speech recognition] found that transformer-based encoder extracts acoustic representations in its lower layers, and linguistic representations in the upper layers. Wav2vec 2.0 proved that they encode representations following an acoustic-linguistic hierarchy from lower to upper layers.
+
+Enlightened by the above findings, we assume that there exists a lower suitable location between the encoder's two layers where the multi-spk overlapped acoustic embedding can be well-separated by drawing on speech separation techniques, such as masks.
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230406153506.png)
+
+We introduce a promising strategy to adapt off-the-shelf well-trained ASR models to multi-talker scenarios. As shown in Fig. 1, we mount a *Sidecar* separator between two suitable layers of a well-trained ASR model. The proposed approach 3 keys advantages:
+1. Low-cost and loose-coupling for converting a well-trained single-talker ASR model to a multi-talker one, w/o complicated customization on the model structure or on the training scheme.
+2. The original ASR model is well-trained and fixed, and only Sidecar (8.7 M, 8.4% of all parameters) needs tuning, making the training feasible within limited time and GPU resources.
+3. Exps leveraging a wav2vec 2.0-based ASR model mounted with a Sidecar are conducted, achieving a WER of 10.36% on 2-spk LibriMix dataset and 7.56% on LibriSpeechMix dataset with limited training.
+
+# 2. Multi-talker ASR system with Sidecar
+Consists of 3 main components – a well-trained single-talker ASR model with params frozen, a Sidecar separator, and the training objective.
+
+With PIT, the model is optimized using CTC loss.
+
+## 2.1. Well-trained single-talker ASR model
+A typical end-to-end ASR model contains an encoder to synthesize waveform or acoustic features into high-level representations, and a decoder to model the representations into language tokens.
+
+Wav2vec 2.0 base-based ASR model contains a 7-layer CNN feature extractor before a linear projection, the encoder consisting of 12 layers of Transformer blocks for generating high-level representations, and a FC layer as the decoder for letter-level prediction. 
+
+## 2.2. Sidecar separator
+Similar to Conv-TasNet, the Sidecar is a temporal convolutional network consisting of stacked 1-D dilated convolutional blocks, which allows the Sidecar to model the long-term dependencies of the acoustic embeddings while maintaining a small size.
+
+3-kernel-size convolutional layers to filter Sidecar's input-mixed and output-separated embeddings.
+
+The separated embeddings of different speakers will go in parallel through the rest of the model and be transcribed into text. This is technically implemented by concatenating the separated embeddings onto the batch dimension.
+
+## 2.3. Training objective
+In addition to PIT-CTC loss, we also tried two reconstruction objectives: SI-SNR or MSE.
+
+The clean single-speaker embeddings are generated by the transformer layer before where the Sidecar is plugged in, and the permutation of speakers is determined by PIT-CTC loss.
+
+Introducing a reconstruction loss requires not only mixed speech but clean single-spk speeches, which significantly increases the computational burden, but can only provide a minor performance gain.
+
+# 3. A baseline system for control
+Specifically, in the same position as Sidecar is in our proposed approach, the baseline model duplicates the preceding encoder layer to predict speaker-dependent embeddings. Except for the two duplicated layers, other parameters are frozen.
+
+Note that, unlike our proposed approach, this Baseline does not maintain the property of keeping the original model parameters unchanged, because it fine-tunes the layers of the original model.
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230406161920.png)
+
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230406162048.png)
+
+Visualizations of Sidecar-predicted masks indicate that in channel dimension, different features encode different speakers’ information. And in the time domain, there exist significant distinctions between different speaker speech periods and overlapping periods.
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230407094146.png)
+Detailed description about how they do the visualization in paper.
+
+
+## 5.4. Ablation studies
+Location **0** is right before the first block; location **1** is between the first and second blocks, etc.
+
+Location **2** is the best result (peak).
+
+The trend aligns with our previous hypothesis: the separation is better performed on acoustic-related representations, which contain sufficient low-semantics information to catch phonetic-level differences. We argue that location **0** is too close to the raw input, where meaningful phonetic-level representations have yet to be well-synthesized. Meanwhile, speaker information matters, as the discussion about Fig. 3. However, if the ASR encoder goes deeper, the speaker information will be eliminated. As a result, location **2** is a compromised scale in semantics.
+
+## 5.5. Limitations
+First, although we used PIT as our training scheme, our strategy also naturally fits serialized output training (SOT), which usually needs to train from scratch. We are interested in whether Sidecar can accelerate SOT’s training with a well-trained ASR model. Second, according to Fig. 3, Sidecar explicitly encodes speaker information. We are excited about the prospects of its application to speech diarization, especially combined with SOT. Third, we only implement Sidecar on the ASR task. We also expect its applicability to other downstream tasks when overlapping exists.
+
+# 6. Conclusion
+Inspired by the findings that ASR encoder captures more acoustic representations in its lower layers and more linguistic in the upper layers, we propose plugging a Sidecar separator into a well-trained single-talker ASR model and converting it to a multi-talker one. The original ASR model is frozen, and only 8.4% of all parameters need tuning.

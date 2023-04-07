@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/619745626
 # 3D Neural Beamforming Against Location Uncertainty 阅读笔记
 # 3D Neural Beamforming for Multi-channel Speech Separation Against Location Uncertainty 阅读笔记
 
