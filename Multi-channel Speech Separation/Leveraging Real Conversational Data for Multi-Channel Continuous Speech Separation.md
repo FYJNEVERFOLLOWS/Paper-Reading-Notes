@@ -35,7 +35,7 @@ VarArray interleaves conformer blocks and cross-channel layers to model both tem
 
 # 3. Three-stage CSS training
 Real data include large-scale data w/o ref transcriptions nor clean signals, as well as a small amount of transcribed data.
-
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202304/20230407144517.png)
 ## 3.1. Stage-1: Pre-training with simulated data
 $$
 \mathcal{L}_{\text {stage-1 }}=\mathcal{L}_{\mathrm{uPIT}}+\sum\limits_{q \in Q} w_q\left\|M_q \odot|Y|-|N|\right\|, \tag{1} 
