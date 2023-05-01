@@ -23,7 +23,7 @@ Instead of usnig IPDs, this work aims to directly extracting spatial features fr
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230302171545.png)
 
 # Exp
-Results indicate that combining spectral and spatial signal representations in an end-to-end fashion helps improve speech separation and ASR accuracy. Also,   dereverberation pre-processing can yield significant performance improvement. Further research is ongoing to extend this system to a multi-device scenario and to evaluate the separation performance with real data recorded in realistic environments such as, for example, CHiME-5
+Results indicate that combining spectral and spatial signal representations in an end-to-end fashion helps improve speech separation and ASR accuracy. Also, dereverberation pre-processing can yield significant performance improvement. Further research is ongoing to extend this system to a multi-device scenario and to evaluate the separation performance with real data recorded in realistic environments such as, for example, CHiME-5
 
 # Conclusion
 We argued that conventional spatial features are not optimal for an end-to-end time domain speech separation system. Using a trainable kernel with a window length matched to that of the spectral encoder can efficiently address the misalignment and mismatch problem, leading to a better multi-channel separation performance.
