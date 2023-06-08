@@ -61,7 +61,9 @@ Reading notes of speech or deep learning related papers, including Automatic Spe
 * Separating Varying Numbers of Sources with Auxiliary Autoencoding Loss [[note]](./Multi-channel%20Speech%20Separation/Separating%20Varying%20Numbers%20of%20Sources%20with%20Auxiliary%20Autoencoding%20Loss%20阅读笔记.md)
 * Spatial Loss for Unsupervised Multi-channel Source Separation [[note]](./Multi-channel%20Speech%20Separation/Spatial%20Loss%20for%20Unsupervised%20Multi-channel%20Source%20Separation%20阅读笔记.md)
 * The Cone of Silence- Speech Separation by Localization [[note]](./Multi-channel%20Speech%20Separation/The%20Cone%20of%20Silence--Speech%20Separation%20by%20Localization阅读笔记.md)
-* TasNet [[note]]()
+* Real-time binaural speech separation with preserved spatial cues [[note]](./Multi-channel%20Speech%20Separation/Binaural%20Speech%20Separation%20of%20Moving%20Speakers%20with%20Preserved%20Spatial%20Cues.md)
+* Binaural Speech Separation of Moving Speakers With Preserved Spatial Cues [[note]](./Multi-channel%20Speech%20Separation/Binaural%20Speech%20Separation%20of%20Moving%20Speakers%20with%20Preserved%20Spatial%20Cues.md)
+* Online Binaural Speech Separation Of Moving Speakers With A Wavesplit Network [[note]](./Multi-channel%20Speech%20Separation/Binaural%20Speech%20Separation%20of%20Moving%20Speakers%20with%20Preserved%20Spatial%20Cues.md)
 
 
 ### [Post-filter](A%20Gentle%20Summary%20of%20Postfilter-related%20Work.md)
